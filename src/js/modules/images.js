@@ -19,13 +19,18 @@ const images = () => {
 
     if (target && target.classList.contains("preview")) {
       imgPopup.style.display = "flex";
+      document.body.style.overflow = 'hidden';
 
       const path = target.parentNode.getAttribute("href");
       bigImage.setAttribute("src", path);
+      bigImage.style.maxWidth = '70%';
+      bigImage.style.maxHeight = '80%';
+      bigImage.style.borderRadius = '5px';
     }
 
     if (target && target.matches("div.popup")) {
       imgPopup.style.display = "none";
+      document.body.style.overflow = '';
     }
   });
 };
